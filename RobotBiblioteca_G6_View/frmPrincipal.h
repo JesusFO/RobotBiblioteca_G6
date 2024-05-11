@@ -38,6 +38,11 @@ namespace RobotBiblioteca_G6_View {
 		}
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ robotToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ mantenimientoDeRobotsToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ préstamoToolStripMenuItem;
+
+
+
 	protected:
 
 
@@ -56,36 +61,54 @@ namespace RobotBiblioteca_G6_View {
 		{
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->robotToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->mantenimientoDeRobotsToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->préstamoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->robotToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->robotToolStripMenuItem,
+					this->préstamoToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
-			this->menuStrip1->Size = System::Drawing::Size(552, 24);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(5, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(736, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// robotToolStripMenuItem
 			// 
+			this->robotToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->mantenimientoDeRobotsToolStripMenuItem });
 			this->robotToolStripMenuItem->Name = L"robotToolStripMenuItem";
-			this->robotToolStripMenuItem->Size = System::Drawing::Size(51, 20);
+			this->robotToolStripMenuItem->Size = System::Drawing::Size(64, 24);
 			this->robotToolStripMenuItem->Text = L"Robot";
 			this->robotToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmPrincipal::robotToolStripMenuItem_Click);
 			// 
+			// mantenimientoDeRobotsToolStripMenuItem
+			// 
+			this->mantenimientoDeRobotsToolStripMenuItem->Name = L"mantenimientoDeRobotsToolStripMenuItem";
+			this->mantenimientoDeRobotsToolStripMenuItem->Size = System::Drawing::Size(265, 26);
+			this->mantenimientoDeRobotsToolStripMenuItem->Text = L"Mantenimiento de Robots";
+			// 
+			// préstamoToolStripMenuItem
+			// 
+			this->préstamoToolStripMenuItem->Name = L"préstamoToolStripMenuItem";
+			this->préstamoToolStripMenuItem->Size = System::Drawing::Size(85, 24);
+			this->préstamoToolStripMenuItem->Text = L"Préstamo";
+			// 
 			// frmPrincipal
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(552, 396);
+			this->ClientSize = System::Drawing::Size(736, 487);
 			this->Controls->Add(this->menuStrip1);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"frmPrincipal";
 			this->Text = L"frmPrincipal";
 			this->Load += gcnew System::EventHandler(this, &frmPrincipal::frmPrincipal_Load);
@@ -103,5 +126,7 @@ namespace RobotBiblioteca_G6_View {
 	}
 	private: System::Void frmPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void generarToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
